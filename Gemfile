@@ -11,7 +11,7 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-gem 'pg', '~> 1.1'
+gem 'pg'
 
 # devise
 gem 'devise'
@@ -33,6 +33,9 @@ gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
+
+# css-bundling
+gem 'cssbundling-rails'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
