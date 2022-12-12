@@ -1,7 +1,5 @@
 class InventoryController < ApplicationController
-  def Index
-  end
+  def index; end
 
-  def show
-  end
+  def show; end
 end
