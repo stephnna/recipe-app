@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'food#index'
-
-  resources :user
+  root to: 'user#index'
 
   # get 'inventory_food/index'
   # get 'food/index'
