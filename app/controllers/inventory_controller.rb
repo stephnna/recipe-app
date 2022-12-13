@@ -13,10 +13,9 @@ class InventoryController < ApplicationController
 
   def create
     @inventory = Inventory.new(
-      name: inventory_params[:name]
+      name: inventory_params[:name],
       user_id: current_user.id
     )
-
     if @inventory.save
       redirect_to inventory_path
     else
@@ -41,4 +40,5 @@ class InventoryController < ApplicationController
   def inventory_params
     params.require(:inventory).permit(:name)
   end
+
 end

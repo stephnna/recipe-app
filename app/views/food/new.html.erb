@@ -1,0 +1,22 @@
+<div class="new-food-container">
+    <h1 class="create-title">Add A New Food</h1>
+    <%= form_with model: @food, url: user_food_index_path(current_user.id) do |f| %>
+    <div class="form-group">
+        <div class="form-outline mb-4">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+        </div>
+        <div class="form-outline mb-4">
+            <%= f.label :measurement_unit %><br />
+            <%= f.text_field :measurement_unit, class: "form-control form-control-lg" %>
+        </div>
+        <div class="form-outline mb-4">
+            <%= f.label :unit_price %><br />
+            <%= f.number_field :unit_price, class: "form-control form-control-lg" %>
+        </div>
+        <div class="submit-btn">
+             <%= f.submit "Add Food" , class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+    </div>
+    <% end %>
+</div>

@@ -19,7 +19,7 @@ class FoodController < ApplicationController
       user_id: current_user.id
     )
     if @food.save
-      redirect_to food_path
+      redirect_to user_food_index_path(current_user.id)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class FoodController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
 
-    redirect_to food_path(current_user.id)
+    redirect_to user_food_index_path(current_user.id)
 
     if @food.destroy
       flash[:success] = 'Food deleted'

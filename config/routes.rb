@@ -16,12 +16,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :user
-  resources :inventory do
-    resources :inventory_food
+  resources :user do
+    resources :inventory do
+      resources :inventory_food
+    end
+    resources :recipe do
+      resources :recipes_food
+    end
+    resources :food
   end
-  resources :recipe do
-    resources :recipes_food
-  end
-  resources :food
 end

@@ -17,9 +17,9 @@
       <p>Logged in as <strong><%= current_user.email %></strong>.</p>
       <a href="/" class="nav-link">Home</a>
       <%= link_to 'Edit profile', edit_user_registration_path, class: "nav-link " %> 
-      <a href="/inventory" class="nav-link">Inventories</a>
-       <a href="/food" class="nav-link">Food List</a>
-        <a href="/recipe" class="nav-link">Recipies</a>
+      <%= link_to 'Inventories', user_inventory_index_path(current_user.id), class: "nav-link " %>
+      <%= link_to 'Recipes', user_recipe_index_path(current_user.id), class: "nav-link " %>
+      <%= link_to 'Food', user_food_index_path(current_user.id), class: "nav-link " %>
       <%= button_to 'logout', destroy_user_session_path, data: {turbo: false}, method: :delete, class: "btn btn-danger" %>
       <% end %>
   </nav>
