@@ -19,6 +19,11 @@
                   <%= f.email_field :email, autofocus: true, autocomplete: "email" ,
                     class: "form-control form-control-lg" %>
               </div>
+              <!-- Role input -->
+              <div class="form-outline mb-4">
+              <%= f.label :role %><br />
+              <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}, class: "form-select") %>
+              </div>
               <!-- Password input -->
               <div class="form-outline mb-4">
                 <%= f.label :password %>
