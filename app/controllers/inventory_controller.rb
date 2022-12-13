@@ -14,6 +14,7 @@ class InventoryController < ApplicationController
   def create
     @inventory = Inventory.new(
       name: inventory_params[:name],
+      description: inventory_params[:description],
       user_id: current_user.id
     )
     if @inventory.save
@@ -38,7 +39,7 @@ class InventoryController < ApplicationController
   private 
 
   def inventory_params
-    params.require(:inventory).permit(:name)
+    params.require(:inventory).permit(:name, :description)
   end
 
 end

@@ -21,7 +21,7 @@
             <th scope="row"><%= food.id %></th>
             <td><%= food.name %></td>
             <td><%= food.measurement_unit %></td>
-            <td>$ <%= food.unit_price %></td>
+            <td>$ <%= food.price %></td>
             <td>
             <% if can? :manage, food %>
             <%= button_to "Delete", "/food/#{food.id}" , data: {turbo: false}, method: :delete, class: "btn btn-danger" %>

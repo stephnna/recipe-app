@@ -1,2 +1,13 @@
-<h1>Inventory#show</h1>
-<p>Find me in app/views/inventory/show.html.erb</p>
+<div class="user_view">
+<h1 class="welcome">Welcome to your <%= @inventory.name %> </h1>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <%= @inventory.name %> 
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <%= @inventory.description %> </li>
+  </ul>
+  </div>
+
+<%= render template: "food/index"  %>
+</div>

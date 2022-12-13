@@ -18,10 +18,11 @@ class FoodController < ApplicationController
       price: food_params[:price],
       user_id: current_user.id
     )
+    
     if @food.save
       redirect_to user_food_index_path(current_user.id)
     else
-      render :new
+      render :new, alert: ':( Cannot Create food retry again :('
     end
   end
 
