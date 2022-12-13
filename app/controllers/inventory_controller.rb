@@ -18,7 +18,7 @@ class InventoryController < ApplicationController
       user_id: current_user.id
     )
     if @inventory.save
-      redirect_to inventory_path
+      redirect_to user_inventory_index_path(current_user.id)
     else
       render :new
     end
@@ -39,7 +39,7 @@ class InventoryController < ApplicationController
   private 
 
   def inventory_params
-    params.require(:inventory).permit(:name, :description)
+    params.permit(:name, :description)
   end
 
 end
