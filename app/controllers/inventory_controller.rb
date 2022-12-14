@@ -39,7 +39,7 @@ class InventoryController < ApplicationController
   def shopping
     @inventory = Inventory.all
   end
-
+  
   private
 
   def inventory_params
