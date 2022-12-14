@@ -17,12 +17,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :user do
-    resources :inventory do
-      resources :inventory_food
-    end
+    resources :inventory
+    resources :food
     resources :recipe do
       resources :recipes_food
     end
-    resources :food
   end
 end

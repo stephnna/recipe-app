@@ -25,9 +25,9 @@ class InventoryController < ApplicationController
   end
 
   def destroy
-    @inventory = Inventory.find(params[:id])
+    @inventory = Inventory.find_by(id: params[:id])
 
-    redirect_to inventory_path(current_user.id)
+    redirect_to user_inventory_index_path(current_user.id)
 
     if @inventory.destroy
       flash[:success] = 'Inventory deleted'

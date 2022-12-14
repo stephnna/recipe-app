@@ -24,7 +24,7 @@
             <td>$ <%= food.price %></td>
             <td>
             <% if can? :manage, food %>
-            <%= button_to "Delete", "/food/#{food.id}" , data: {turbo: false}, method: :delete, class: "btn btn-danger" %>
+            <%= button_to "Delete", user_food_path(current_user.id, food.id), data: {turbo: false}, method: :delete, class: "btn btn-danger" %>
             <% end %>
             </td>
         </tr>
