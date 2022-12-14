@@ -18,7 +18,7 @@ class FoodController < ApplicationController
       price: food_params[:price],
       user_id: current_user.id
     )
-    
+
     if @food.save
       redirect_to user_food_index_path(current_user.id)
     else
@@ -38,11 +38,9 @@ class FoodController < ApplicationController
     end
   end
 
-
   private
 
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price)
   end
-  
 end
