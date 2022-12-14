@@ -1,7 +1,13 @@
-
-<%=link_to new_recipe_path(current_user) do %>
+<%=link_to new_user_recipe_path(@recipes) do %>
 <button>Add food</button>
 <% end %><br />
-<%=@recipes%>
+<% @recipes.each do |recipe| %>
+<div><%=recipe.name%> <%=recipe.id%>
+<% if can? :manage, recipe %>
+<%= button_to "Remove", user_recipe_path(current_user.id, recipe.id), method: :delete, data: {turbo: false} %>
+<% end %>
+
+<%=recipe.description%>
+<% end %><br />
 
 
