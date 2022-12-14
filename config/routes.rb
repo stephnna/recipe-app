@@ -23,4 +23,8 @@ Rails.application.routes.draw do
       resources :recipes_food
     end
   end
+
+  get '/public_recipes', to: 'recipe#public'
+  # shoping list
+  get '/shopping_list', to: 'inventory#shopping'
 end
