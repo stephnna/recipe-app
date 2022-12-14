@@ -1,0 +1,14 @@
+<h1>Create new food</h1>
+<%= form_with model: Recipe, url: user_recipe_index_path(user_id: current_user.id) do |form| %>
+  <%= form.label :name%>
+  <%= form.text_field :name, placeholder: "name" %><br>
+  <%= form.label :preparation_time %>
+  <%= form.text_area :preparation_time, placeholder: "How long does it take to prepare" %> <br />
+  <%= form.label :cooking_time %>
+  <%= form.text_area :cooking_time, placeholder: "How long does it"%> <br />
+  <%= form.label :description %>
+  <%= form.text_area :description, placeholder: "Describe how to cook it" %><br>
+  <%= form.label :public_recipe %>
+  <%= form.check_box :public_recipe %><br />
+  <%=form.submit "Add food", data: {turbo: false} %> 
+<% end %>
