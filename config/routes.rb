@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # devise_for :user
-
   root to: 'user#index'
-
-  resources :user
 
   # get 'inventory_food/index'
   # get 'food/index'
@@ -19,4 +15,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :user do
+    resources :inventory
+    resources :food
+    resources :recipe do
+      resources :recipes_food
+    end
+  end
 end

@@ -1,0 +1,23 @@
+<div class="food-view">
+<h1 class="welcome">Welcome to the Inventories Page</h1>
+<div>
+<%= link_to 'Add Inventory', new_user_inventory_path(current_user.id), class: "btn btn-dark" %>
+</div>
+<h2>Below Is a List Of Inventories in our Recipe App</h2>
+ <% Inventory.all.each do |inv| %>
+        <div class="card">
+        <div class="card-header">
+        <%= link_to user_inventory_path(current_user.id, inv.id) do %>
+            <%= inv.name %>
+        <% end %>
+        </div>
+        <div class="card-body">
+            <p class="card-text"> Inventory Description: <%= inv.description %></p>
+            <% if can? :manage, inv %>
+            <%= button_to "Delete", user_inventory_path(current_user.id, inv.id) , data: {turbo: false}, method: :delete, class: "btn btn-danger" %>
+            <% end %>
+        </div>
+        </div>
+    <% end %>
+</div>
+</div>

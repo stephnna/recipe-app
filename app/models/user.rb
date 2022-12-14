@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :recepies, foreign_key: :user_id
 
   validates :name, presence: true, length: { maximum: 50 }
+
+  ROLES = %i[admin default guest].freeze
 end
