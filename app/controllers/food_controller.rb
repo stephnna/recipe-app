@@ -18,17 +18,18 @@ class FoodController < ApplicationController
       price: food_params[:price],
       user_id: current_user.id
     )
+    
     if @food.save
-      redirect_to food_path
+      redirect_to user_food_index_path(current_user.id)
     else
-      render :new
+      render :new, alert: ':( Cannot Create food retry again :('
     end
   end
 
   def destroy
     @food = Food.find(params[:id])
 
-    redirect_to food_path(current_user.id)
+    redirect_to user_food_index_path(current_user.id)
 
     if @food.destroy
       flash[:success] = 'Food deleted'
@@ -43,4 +44,5 @@ class FoodController < ApplicationController
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price)
   end
+  
 end

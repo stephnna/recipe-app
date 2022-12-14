@@ -13,21 +13,21 @@ class InventoryController < ApplicationController
 
   def create
     @inventory = Inventory.new(
-      name: inventory_params[:name]
+      name: inventory_params[:name],
+      description: inventory_params[:description],
       user_id: current_user.id
     )
-
     if @inventory.save
-      redirect_to inventory_path
+      redirect_to user_inventory_index_path(current_user.id)
     else
       render :new
     end
   end
 
   def destroy
-    @inventory = Inventory.find(params[:id])
+    @inventory = Inventory.find_by(id: params[:id])
 
-    redirect_to inventory_path(current_user.id)
+    redirect_to user_inventory_index_path(current_user.id)
 
     if @inventory.destroy
       flash[:success] = 'Inventory deleted'
@@ -39,6 +39,7 @@ class InventoryController < ApplicationController
   private 
 
   def inventory_params
-    params.require(:inventory).permit(:name)
+    params.permit(:name, :description)
   end
+
 end
