@@ -16,9 +16,8 @@ class InventoryFoodController < ApplicationController
     @inventory_food = InventoryFood.create(inventory_food_params)
     @inventory_food.inventory_id = params[:inventory_id]
     @inventory_food.food_id = params[:food_id]
-     @inventory_food.save
+    @inventory_food.save
     redirect_to user_inventory_path(current_user.id, params[:inventory_id]), notice: 'Inventory Food was successfully created.'
-
   end
 
   def destroy
