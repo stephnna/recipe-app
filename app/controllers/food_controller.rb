@@ -38,6 +38,10 @@ class FoodController < ApplicationController
     end
   end
 
+  def shopping
+    @food = Food.all
+  end
+
   private
 
   def food_params

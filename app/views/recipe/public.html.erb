@@ -11,16 +11,14 @@
         <div class="card-body">
           <p class="card-text">
             <span>Total food items: </span>
-            <span class="font-bold"><%= recipe.recipe_count %></span>
+            <%= recipe.recipes_foods.count %>
           </p>
           <p class="card-text">
-            <small>
               <% sum = 0 %>
               <% recipe.recipes_foods.each do |food| %>
               <% sum += food.quantity * food.food.price %>
               <% end %>
               <%= "Total price: $#{sum}" %>
-            </small> 
           </p>
           <p class="card-text">
             <small class="text-muted">Added <%= time_ago_in_words(recipe.created_at)%></small>
