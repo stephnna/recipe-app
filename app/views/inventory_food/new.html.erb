@@ -1,2 +1,23 @@
-<h1>InventoryFood#new</h1>
-<p>Find me in app/views/inventory_food/new.html.erb</p>
+<div class="new-food-container">
+    <h1 class="create-title">Add A New Inventory</h1>
+    <%= form_with model: @inventory_food, url: user_inventory_inventory_food_index_path(current_user.id) do |f| %>
+    <div class="form-group">
+       <div class="form-outline mb-4">
+            <%= f.label :quantity %><br />
+            <%= f.text_field :quantity, class: "form-control form-control-lg" %>
+        </div>
+        <div class="form-outline mb-4">
+            <%= f.label :inventory_id %><br />
+            <%= f.collection_select(:inventory_id, Inventory.all, :id, :name,class: "form-control form-control-lg" ) %>
+        </div>
+        <div class="form-outline mb-4">
+            <%= f.label :food_id %><br />
+          <%= f.collection_select(:food_id, Food.all, :id, :name,class: "form-control form-control-lg" ) %>
+        </div>
+
+        <div class="submit-btn">
+             <%= f.submit  class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+    </div>
+    <% end %>
+</div>

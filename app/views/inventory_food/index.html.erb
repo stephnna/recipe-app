@@ -1,2 +1,31 @@
-<h1>InventoryFood#index</h1>
-<p>Find me in app/views/inventory_food/index.html.erb</p>
+<div class="food-view">
+<div>
+<%= link_to 'Add Food', new_user_inventory_inventory_food_path(current_user.id, @inventory.id), class: "btn btn-dark" %>
+</div>
+<h2>Below Is a List Of Foods in our Recipe App</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% InventoryFood.all.each do |infood| %>
+        <tr>
+            <th scope="row"><%= infood.id %></th>
+            <td><%= infood.foods.name %></td>
+            <td><%= infood.quantity %></td>
+            <td>
+            <% if can? :manage, infood %>
+            <%= button_to "Delete", user_inventory_inventory_food_path(current_user.id, @inventory.id, infood.id), data: {turbo: false}, method: :delete, class: "btn btn-danger" %>
+            <% end %>
+            </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
