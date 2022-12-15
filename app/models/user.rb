@@ -10,6 +10,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
 
-  ROLES = %i[admin default guest]
-
+  ROLES = %i[admin default guest].freeze
 end

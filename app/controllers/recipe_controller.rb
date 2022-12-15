@@ -5,7 +5,7 @@ class RecipeController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = Food.all    
+    @foods = Food.all
   end
 
   def new
@@ -20,21 +20,21 @@ class RecipeController < ApplicationController
       flash[:notice] = "Recipe created successfully"
       redirect_to user_recipe_index_path(id: current_user.id)
     else
-      render :new 
-    end     
+      render :new
+    end
   end
 
   def destroy
     recipe = Recipe.find(params[:id])
     redirect_to user_recipe_index_path(current_user.id)
     if current_user == recipe.user
-      recipe.destroy 
+      recipe.destroy
     else
-      flash[:danger] = "Sorry, something went wrong!"      
-    end    
+      flash[:danger] = "Sorry, something went wrong!"
+    end
   end
+
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time,  :description, :public_recipe)        
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public_recipe)
   end
 end
-      

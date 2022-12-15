@@ -36,10 +36,9 @@ class InventoryController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def inventory_params
     params.permit(:name, :description)
   end
-
 end
