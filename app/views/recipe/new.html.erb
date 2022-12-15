@@ -1,5 +1,6 @@
 <h1>Create new food</h1>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <%= form_with model: Recipe, url: user_recipe_index_path(id: current_user.id) do |form| %>
   <%= form.label :name%>
   <%= form.text_field :name, placeholder: "name" %><br>
@@ -7,6 +8,15 @@
   <%= form.text_area :preparation_time, placeholder: "How long does it take to prepare" %> <br />
   <%= form.label :cooking_time %>
   <%= form.text_area :cooking_time, placeholder: "How long does it"%> <br />
+=======
+<%= form_with model: Recipe, url: recipe_index_path do |form| %>
+  <%= form.label :name%>
+  <%= form.text_field :name, placeholder: "name" %><br>
+  <%= form.label :preparation_time %>
+  <%= form.number_field :preparation_time, in: 1..20, step: 1 %> <br />
+  <%= form.label :cooking_time %>
+  <%= form.number_field :cooking_time, in: 1..20, step: 1 %> <br />
+>>>>>>> Stashed changes
 =======
 <%= form_with model: Recipe, url: recipe_index_path do |form| %>
   <%= form.label :name%>
