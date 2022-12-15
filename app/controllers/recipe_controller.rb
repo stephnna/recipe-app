@@ -3,8 +3,8 @@ class RecipeController < ApplicationController
     @recipes = Recipe.all
   end
 
-  def show
-    @recipe = Recipe.find(params[:recipe_id])    
+  def show 
+    @recipe = Recipe.find(params[:id]) 
   end
 
   def new
@@ -13,7 +13,7 @@ class RecipeController < ApplicationController
 
   def create
     recipe = Recipe.create(recipe_params)    
-    recipe.user_id = current_user.id    
+    recipe.user_id = current_user.id 
     if recipe.valid?
       recipe.save
       flash[:notice] = "Recipe created successfully"
@@ -36,6 +36,4 @@ class RecipeController < ApplicationController
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time,  :description, :public_recipe)        
   end
 end
-
-
       

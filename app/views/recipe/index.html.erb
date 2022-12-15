@@ -2,6 +2,7 @@
 <button>Add food</button>
 <% end %><br />
 <% @recipes.each do |recipe| %>
+<<<<<<< Updated upstream
 <div class="col-md-4 card card-strip d-flex flex-row justify-content-around align-items-center p-3" style="margin-left: 30rem">
 <div class="d-flex flex-column"><h3><%=recipe.name%> <%=recipe.id%></h3>
 <% if can? :manage, recipe %>
@@ -12,5 +13,9 @@
 </div><br />
 <% end %>
 
+=======
+<div><strong>Recipe #<%=recipe.id%></strong><br><strong>Recipe: <%=recipe.name%></strong><br><%=post.description...%><br>
+<% end %>
+>>>>>>> Stashed changes
 
 
