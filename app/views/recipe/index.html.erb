@@ -3,7 +3,8 @@
 <% end %><br />
 <% @recipes.each do |recipe| %>
 <div class="col-md-4 card card-strip d-flex flex-row justify-content-around align-items-center p-3" style="margin-left: 30rem">
-<div class="d-flex flex-column"><h3><%=recipe.name%> <%=recipe.id%></h3>
+<div class="d-flex flex-column"><h3><%= link_to user_recipe_path(current_user.id, recipe.id) do %><%=recipe.name%> <%=recipe.id%></h3>
+                                    <%end%>                 
 <% if can? :manage, recipe %>
 <%= button_to "Remove", user_recipe_path(current_user.id, recipe.id), method: :delete, data: {turbo: false}, class: "btn btn-danger mt-3" %>
 </div>
@@ -11,14 +12,4 @@
 <%=recipe.description%>
 </div><br />
 <% end %>
-
-
-<div><strong>Recipe #<%=recipe.id%></strong><br><strong>Recipe: <%=recipe.name%></strong><br><%=post.description...%><br>
-<% end %>
-
-
-<div><strong>Recipe #<%=recipe.id%></strong><br><strong>Recipe: <%=recipe.name%></strong><br><%=post.description...%><br>
-<% end %>
-
-
 
