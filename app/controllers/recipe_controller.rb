@@ -13,7 +13,7 @@ class RecipeController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new(params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :public_recipe, :description))
+    recipe = Recipe.create(recipe_params)
     recipe.user_id = current_user.id
     if recipe.valid?
       recipe.save
@@ -33,6 +33,12 @@ class RecipeController < ApplicationController
       flash[:danger] = "Sorry, something went wrong!"
     end
   end
+
+  def public
+    @recipes = Recipe.all
+  end
+
+  private
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public_recipe)

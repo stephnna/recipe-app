@@ -1,8 +1,7 @@
 <div class="user_view">
-<h1 class="welcome">Welcome <%= @user.name %>.</h1>
-<h2>Below Is a List Of Users in our Recipe App</h2>
+<h1 class="welcome">Welcome To The Recipe App</h1>
  <% User.all.each do |user| %>
-        <div class="card">
+        <div class="card m-3">
         <div class="card-header">
             <%= user.name %>
         </div>

@@ -36,6 +36,10 @@ class InventoryController < ApplicationController
     end
   end
 
+  def shopping
+    @foods = Food.all
+  end
+
   private
 
   def inventory_params
