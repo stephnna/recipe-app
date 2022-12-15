@@ -1,0 +1,15 @@
+<h1>Recipe detail show</h1>
+<h1><%= @recipe_food.recipe.name%> <%= @recipe_food.recipe.id%><h1> 
+<p>preparation_time: <%= @recipe_food.recipe.preparation_time%></p>
+<p>Public: <%= @recipe_food.recipe.public_recipe%></p>
+<p>cooking_time: <%= @recipe_food.recipe.cooking_time%></p>
+<p>description: <%= @recipe_food.recipe.description%></p>
+<button>Generate shopping list</button>
+<button>Add Ingredient</button><hr />
+
+<h2>Food</h2>
+<%@foods.each do |food|%>
+Name: <%=food.name%> price: <%=food.price%>usd
+<button>Modify</button><button>Remove</button>
+<%end%>
+
