@@ -1,13 +1,7 @@
-<div class="user_view">
-<h1 class="welcome">Welcome to your <%= @inventory.name %> </h1>
-<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    <%= @inventory.name %> 
+<div class="d-flex flex-column justify-content-center mt-5">
+    <div class="card-header text-center">
+      <h1><%= @inventory.name %> </h1>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> <%= @inventory.description %> </li>
-  </ul>
-  </div>
-
-<%= render template: "inventory_food/index"  %>
+  <%= render template: "inventory_food/index"  %>
 </div>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :user do
     resources :inventory do
-      resources :inventory_food
+      resources :inventory_food, only: [:new, :create, :destroy, :index]
     end
     resources :food
     resources :recipe do

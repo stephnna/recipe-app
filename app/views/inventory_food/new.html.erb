@@ -1,6 +1,6 @@
 <div class="new-food-container">
     <h1 class="create-title">Add A New Inventory</h1>
-    <%= form_with model: @inventory_food, url: user_inventory_inventory_food_index_path(current_user.id) do |f| %>
+    <%= form_with  url: user_inventory_inventory_food_index_path, method: :post, local: true, scope: :@inventory_food do |f| %>
     <div class="form-group">
        <div class="form-outline mb-4">
             <%= f.label :quantity %><br />
@@ -12,7 +12,9 @@
         </div>
         <div class="form-outline mb-4">
             <%= f.label :food_id %><br />
-          <%= f.collection_select(:food_id, Food.all, :id, :name,class: "form-control form-control-lg" ) %>
+          <%# <%= f.collection_select(:food_id, Food.all, :id, :name,class: "form-control form-control-lg" ) %>
+            <%= f.select(:food_id, Food.all.map{|u| [u.name, u.id]}, class: "form-control form-control-lg" ) %>
+
         </div>
 
         <div class="submit-btn">
