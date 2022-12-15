@@ -15,7 +15,7 @@ class InventoryFoodController < ApplicationController
     @inventory_food = InventoryFood.new(
       quantity: inventory_food_params[:quantity],
       food_id: inventory_food_params[:food_id],
-      inventory_id: inventory_food_params[:inventory_id],
+      inventory_id: inventory_food_params[:inventory_id]
     )
 
     if @inventory_food.save
