@@ -7,7 +7,9 @@ class Recipe < ApplicationRecord
   validates :cooking_time, presence: true, length: { maximum: 20 }
   validates :preparation_time, presence: true, length: { maximum: 20 }
 
+
   def recipe_count
     recipes_foods.count
   end
+
 end
