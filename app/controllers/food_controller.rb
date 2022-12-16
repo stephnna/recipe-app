@@ -30,12 +30,21 @@ class FoodController < ApplicationController
     @food = Food.find(params[:id])
 
     redirect_to user_food_index_path(current_user.id)
-
     if @food.destroy
       flash[:success] = 'Food deleted'
     else
       flash.now[:error] = 'Food Not Deleted'
     end
+  end
+
+  def shopping
+    @foods = Food.all
+    @inventory_foods = InventoryFood.all
+    @recipes_foods = RecipesFood.all
+  end
+
+  def shopping_create
+    @shopping = Inventory.find(params[:id])
   end
 
   private
