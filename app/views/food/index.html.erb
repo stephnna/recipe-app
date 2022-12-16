@@ -1,11 +1,10 @@
 <div class="food-view">
-<h1 class="welcome">Welcome to the Food Index Page</h1>
-<div>
+<h1 class="welcome text-center">Welcome to the Foods Page</h1>
+<div class="d-flex justify-content-end m-3">
 <%= link_to 'Add Food', new_user_food_path(current_user.id), class: "btn btn-dark" %>
 </div>
-<h2>Below Is a List Of Foods in our Recipe App</h2>
 
-<table class="table table-striped">
+<table class="table table-striped m-3 p-3">
   <thead>
     <tr>
       <th scope="col">#</th>
