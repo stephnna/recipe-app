@@ -44,9 +44,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog Posts App <a name="about-project"></a>
+# 📖 Recipe App <a name="about-project"></a>
 
-This **Blog Posts App** is a ruby on rails application that allows users to create and update posts.
+This **Recipe App** is a ruby on rails application that allows users to create and update posts.
 
 ## 📹 Video <a name="video"></a>
 
