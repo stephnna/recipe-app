@@ -5,12 +5,31 @@ class RecipeController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = Food.all
+    @inventories = Inventory.all
+    @foods = Food.all    
   end
 
   def new
     @recipe = Recipe.new
+    @food = Food.new
   end
+
+  def edit 
+    @food = Food.find(params[:id])   
+    redirect_to user_food_path(current_user.id)
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.public_recipe == true
+      @recipe.update(public_recipe: false)
+    else
+      Recipe.find(@recipe.id).update(public_recipe: true)
+    end
+    redirect_to user_recipe_path(@recipe.id), notice: 'Public Updated'
+  end
+
 
   def create
     recipe = Recipe.create(recipe_params)
