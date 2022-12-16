@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <h1 class="text-center">Shopping List </h1>
+  <div class="d-flex justify-content-between mb-3">
+    <h3 class="text-center">Total: <%= "$#{ @total }" %></h3>
+    <div class="d-flex justify-content-end">
+    </div>
+  </div>
+  <table class="table table-sm table-striped table-bordered border-dark ">
+    <tr>
+      <th> #</th>
+      <th> Food Item </th>
+      <th> Quantity </th>
+      <th> Price </th>
+      <th> Total </th>
+    </tr>
+    <% @foods.each do |food| %>
+      <% food.recipes_foods.each do |recipe| %>
+        <% food.inventory_foods.each do |inven| %>
+          <% if recipe.quantity > inven.quantity.to_i %>
+            <tr>
+              <td> <%= food.id  %> </td>
+              <td> <%= food.name %> </td>
+              <td> <%= recipe.quantity - inven.quantity.to_i %> </td>
+              <td> <%=  "$#{food.price}"%> </td>
+              <td> <%= "$#{food.price * (recipe.quantity - inven.quantity.to_i )}" %> </td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </table>
+</div>
