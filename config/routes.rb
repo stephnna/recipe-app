@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
     resources :food
     resources :recipe do
-      resources :recipes_food
+      resources :recipes_food, only: [:new, :create, :destroy, :index, :update]
     end
   end
 
