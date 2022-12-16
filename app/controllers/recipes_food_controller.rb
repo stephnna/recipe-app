@@ -19,7 +19,7 @@ class RecipesFoodController < ApplicationController
     redirect_to user_recipe_path(current_user.id, params[:recipe_id]), notice: 'Recipe Food was successfully created.'
   end
 
-   def destroy
+  def destroy
     @recipe_food = RecipesFood.find_by(id: params[:id])
 
     redirect_to user_recipe_path(current_user.id, params[:recipe_id]), notice: 'Recipe Food was successfully deleted.'
