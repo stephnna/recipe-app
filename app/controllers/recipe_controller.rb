@@ -6,7 +6,7 @@ class RecipeController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @inventories = Inventory.all
-    @foods = Food.all    
+    @foods = Food.all
   end
 
   def new
@@ -14,8 +14,8 @@ class RecipeController < ApplicationController
     @food = Food.new
   end
 
-  def edit 
-    @food = Food.find(params[:id])   
+  def edit
+    @food = Food.find(params[:id])
     redirect_to user_food_path(current_user.id)
   end
 
@@ -29,7 +29,6 @@ class RecipeController < ApplicationController
     end
     redirect_to user_recipe_path(@recipe.id), notice: 'Public Updated'
   end
-
 
   def create
     recipe = Recipe.create(recipe_params)
