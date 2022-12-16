@@ -43,6 +43,10 @@ class FoodController < ApplicationController
     @recipes_foods = RecipesFood.all
   end
 
+  def shopping_create
+    @shopping = Inventory.find(params[:id])
+  end
+
   private
 
   def food_params

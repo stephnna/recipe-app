@@ -14,8 +14,41 @@
     </div>
 
   </div>
-  <div class="d-flex justify-content-start" style="margin-left: 20rem">
-    <button class="btn btn-dark">Generate shopping list</button>
+  <div class="d-flex justify-content-start" style="margin-left: 10rem">
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Generate shopping list
+</button>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Generating Shopping List</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    <%= form_with  url: shopping_list_path, method: :post, local: true, scope: :@shopping do |f| %>
+    <div class="form-group">
+      <h3>Choose An Inventory To Use</h3>
+        <div class="form-outline mb-4">
+            <%= f.label :inventory_id, class: "form-label" %><br />
+            <%= f.collection_select(:inventory_id, Inventory.all, :id, :name,class: "form-control form-control-lg" ) %>
+        </div>
+        <div class="submit-btn">
+             <%= f.submit  class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+    </div>
+    <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <%= render template: "recipes_food/index"  %>
 </div>

@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   get '/public_recipes', to: 'recipe#public'
   # shoping list
   get '/shopping_list', to: 'food#shopping'
+  post 'shopping_list', to: 'food#shopping'
 end
