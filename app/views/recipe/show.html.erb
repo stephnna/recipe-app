@@ -1,37 +1,12 @@
 <h1 class="text-center margin-buttom"><%= @recipe.name%> <%= @recipe.id%><h1> 
-<p>preparation_time: <%= @recipe.preparation_time%><span> Public: <%= @recipe.public_recipe%></span></p>
+
+
+<p>preparation_time: <%= @recipe.preparation_time%>
+<span> Public: <%= @recipe.public_recipe%></span></p>
 
 <p>cooking_time: <%= @recipe.cooking_time%></p>
 <p>description: <%= @recipe.description%></p>
 <button>Generate shopping list</button>
-<button>Add Ingredient</button><hr />
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Food</th>
-      <th scope="col">Qauntity</th>
-      <th scope="col">Value</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @foods.each do |food| %>
-        <tr>
-            <th scope="row"><%= food.id %></th>
-            <td><%= food.name %></td>
-            <td><%= food.measurement_unit %></td>
-            <td>$ <%= food.price %></td>
-            <td>
-            <% if can? :manage, food %>
-            <%= button_to "Modify", user_food_index_path(current_user.id), data: {turbo: false}, method: :update, class: "btn btn-primary" %> 
-            <%= button_to "Delete", user_food_path(current_user.id, food.id), data: {turbo: false}, method: :delete, class: "btn btn-danger" %>
-            <% end %>
-            </td>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+  <%= render template: "recipes_food/index"  %>
 

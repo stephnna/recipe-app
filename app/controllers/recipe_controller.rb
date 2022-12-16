@@ -34,6 +34,9 @@ class RecipeController < ApplicationController
     end
   end
 
+ 
+
+
   def public
     @recipes = Recipe.all
   end
