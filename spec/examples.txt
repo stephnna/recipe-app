@@ -1,0 +1,14 @@
+example_id                                    | status | run_time        |
+--------------------------------------------- | ------ | --------------- |
+./spec/feature/food_spec.rb[1:1:1]            | passed | 0.20578 seconds |
+./spec/feature/user_index_page_spec.rb[1:1:1] | passed | 0.86103 seconds |
+./spec/feature/user_index_page_spec.rb[1:1:2] | passed | 0.14647 seconds |
+./spec/models/food_spec.rb[1:1]               | passed | 0.03792 seconds |
+./spec/models/food_spec.rb[1:2]               | passed | 0.02815 seconds |
+./spec/models/inventory_food_spec.rb[1:1]     | passed | 0.08194 seconds |
+./spec/models/inventory_spec.rb[1:1]          | passed | 0.03062 seconds |
+./spec/models/inventory_spec.rb[1:2]          | passed | 0.73194 seconds |
+./spec/models/recipe_spec.rb[1:1]             | passed | 0.07468 seconds |
+./spec/models/recipes_food_spec.rb[1:1]       | passed | 0.07131 seconds |
+./spec/models/user_spec.rb[1:1]               | passed | 0.00268 seconds |
+./spec/models/user_spec.rb[1:2]               | passed | 0.00321 seconds |
