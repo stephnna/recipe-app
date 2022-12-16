@@ -1,5 +1,5 @@
 <div class="food-view">
-  <div class="d-flex justify-content-end m-3 p-1">
+  <div class="d-flex justify-content-end " style="margin-right: 10rem; margin-top: 5rem">
     <%= link_to 'Add Inventory', new_user_inventory_path(current_user.id), class: "btn btn-dark p-3" %>
   </div>
   <% Inventory.all.each do |inv| %>
