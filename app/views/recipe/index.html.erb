@@ -1,6 +1,9 @@
+<div class="d-flex justify-content-end ">
 <%=link_to new_user_recipe_path(@recipes) do %>
-  <button>Add food</button>
+  <button class="btn btn-primary m-5 p-3">Add Another Recipe</button>
 <% end %><br />
+</div>
+
 <% @recipes.each do |recipe| %>
   <div class="col-md-4 card card-strip d-flex flex-row justify-content-around align-items-center p-3 mb-3" style="margin-left: 30rem">
     <div class="d-flex flex-column">
