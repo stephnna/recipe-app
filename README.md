@@ -109,7 +109,7 @@ To get a local copy up and running, follow these steps.
 ### Setup
 
 #### Github
-- Enter this url: [https://github.com/stephnna/blog-posts](https://github.com/stephnna/blog-posts) in your web browser.
+- Enter this url: [https://github.com/stephnna/recipe-app](https://github.com/stephnna/recipe-app) in your web browser.
 - Once opened navigate to the top left level of the project a green code download button will be visible on the righthand side.
 - Select the download Zip option from drop-down menu.
 - Once the download is complete you will be able to access my project locally.
@@ -117,7 +117,7 @@ To get a local copy up and running, follow these steps.
 #### Local (Terminal)
 
 ```sh
-  git clone git@github.com:stephnna/blog-posts.git
+  git clone git@github.com:stephnna/recipe-app.git
   cd rails-recipe-app
 ```
 
@@ -128,7 +128,7 @@ Install this project with:
 <!--
 
 ```sh
-  cd blog-posts
+  cd recipe-app
   bundle install
 ```
 --->
@@ -157,8 +157,9 @@ You can deploy this project using:
 
 <!-- AUTHOR -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
+## 👥 Stephen Ezea 
 - GitHub: [@stephnna](https://github.com/stephnna)
 - Twitter: [@stephnna](https://twitter.com/stephnna)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/stephen-ezea/)
