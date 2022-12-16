@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
 
-  has_many :inventories, foreign_key: :user_id
-  has_many :recipes, foreign_key: :user_id
+  has_many :inventories, foreign_key: :user_id, dependent: :destroy
+  has_many :recipes, foreign_key: :user_id, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
 
