@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Food', type: :feature do
   subject do
     @user = User.create!(name: 'Tom', role: "admin", email: "email@hmail.com", password: "password")
-    food = Food.create!(name: "eggs", measurement_unit: "grams", price: 10, user_id: @user.id)
+    Food.create!(name: "eggs", measurement_unit: "grams", price: 10, user_id: @user.id)
   end
 
   before(:each) { subject.save }

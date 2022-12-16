@@ -4,7 +4,7 @@ RSpec.describe 'food/index.html.erb', type: :feature do
   describe 'Food#index' do
     before(:each) do
       @user = User.create!(name: 'Tom', role: "admin", email: "email@gmail.com", password: "password")
-      food = Food.create!(name: "eggs", measurement_unit: "grams", price: 10, user_id: @user.id)
+      Food.create!(name: "eggs", measurement_unit: "grams", price: 10, user_id: @user.id)
 
       visit new_user_session_path
       fill_in 'Email', with: "email@gmail.com"
