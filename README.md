@@ -116,7 +116,8 @@ To run tests, run the following command:
 ### Deployment
 
 You can deploy this project using:
-Heroku
+- Heroku: [Recipe App ](https://recipe-website.herokuapp.com/users/sign_up)
+
 
 
 
