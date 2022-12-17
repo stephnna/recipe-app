@@ -43,7 +43,7 @@ class FoodController < ApplicationController
     @recipes_foods = RecipesFood.all
   end
 
-  def shopping_create
+  def list
     @shopping = Inventory.find(params[:id])
   end
 

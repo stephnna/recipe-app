@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-start" style="margin-left: 15rem">
+  <div class="d-flex justify-content-start" style="margin-left: 18rem">
 <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Generate shopping list
 </button>
@@ -30,16 +30,15 @@
       <div class="modal-body">
     <%= form_with  url: shopping_list_path, method: :post, local: true, scope: :@shopping do |f| %>
     <div class="form-group">
-      <h3>not ina a requirement</h3>
+    <%= f.collection_select(:inventory_id, Inventory.all, :id, :name,class: "form-control form-control-lg" ) %>
         <div class="submit-btn">
-             <%= f.submit  class: "btn btn-primary btn-lg btn-block"  %>
+             <%= f.submit "Generate", class: "btn btn-primary btn-lg btn-block m-1"  %>
         </div>
     </div>
     <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>

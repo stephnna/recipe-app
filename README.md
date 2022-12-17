@@ -99,7 +99,14 @@ Install this project with:
 
 To run the project, execute the following command:
 
+To Be able to run the project:
+
+`rails assets:precompile`
+
+Then To run it on the local host server use:
+
 `rails server` or `rails s` 
+
 ### Run tests
 
 To run tests, run the following command:
