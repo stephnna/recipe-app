@@ -18,7 +18,7 @@
           <% if recipe.quantity < inven.quantity.to_i || recipe.quantity > inven.quantity.to_i %>
             <div class="d-flex justify-content-between">
               <div>
-                <h4> total foods in the Food table: <%= food.name.length %> </h4>
+                <h4> Food needed ID: <%= food.name.length %> </h4>
                 <h2> food needed: <%= food.name %> </h2>
                 <h2> Total: <%= @total = "$#{food.price * (recipe.quantity - inven.quantity.to_i )}" %> </h2>
               </div>
